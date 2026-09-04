@@ -1,6 +1,6 @@
 import { Resend } from "resend";
 
-const TO_EMAIL = "wreckitortechitmail@gmail.com";
+const TO_EMAIL = "shanewing@gmail.com";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
