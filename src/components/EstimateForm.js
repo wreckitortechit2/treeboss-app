@@ -12,14 +12,34 @@ const services = [
 
 export default function EstimateForm() {
   const [status, setStatus] = useState("idle");
+  const [error, setError] = useState("");
 
   async function handleSubmit(e) {
     e.preventDefault();
     setStatus("sending");
-    // Wire this to your endpoint, Typeform, or email service.
-    // For now it simulates a successful submit.
-    await new Promise((r) => setTimeout(r, 800));
-    setStatus("sent");
+    setError("");
+
+    const form = e.currentTarget;
+    const data = Object.fromEntries(new FormData(form).entries());
+
+    try {
+      const res = await fetch("/api/estimate", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        throw new Error(body.error || "Something went wrong.");
+      }
+
+      setStatus("sent");
+      form.reset();
+    } catch (err) {
+      setError(err.message || "Could not send. Please call (267) 810-0031.");
+      setStatus("idle");
+    }
   }
 
   if (status === "sent") {
@@ -73,6 +93,7 @@ export default function EstimateForm() {
           placeholder="Tree size, location, urgency, access notes..."
         />
       </label>
+      {error ? <p className={styles.error}>{error}</p> : null}
       <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
         {status === "sending" ? "Sending..." : "Request Free Estimate"}
       </button>
