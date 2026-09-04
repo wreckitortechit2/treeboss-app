@@ -20,7 +20,7 @@ Open http://localhost:3000
 
 ## Estimate form
 
-Submissions POST to `/api/estimate`, which sends an email to **wreckitortechitmail@gmail.com** (Shane Wing) via Resend.
+Submissions POST to `/api/estimate`, which sends an email to **shanewing@gmail.com** (Shane Wing) via Resend.
 
 1. Create a free account at https://resend.com and get an API key.
 2. In Vercel (or locally), set the env var:
