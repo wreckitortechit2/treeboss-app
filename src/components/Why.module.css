@@ -1,0 +1,38 @@
+.section {
+  padding: 4.5rem 0;
+  background: var(--black);
+  color: var(--white);
+}
+
+.section :global(.section-title) {
+  color: var(--white);
+}
+
+.section :global(.eyebrow) {
+  color: var(--safety-orange);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1.2rem;
+}
+
+.card {
+  background: #141414;
+  border-radius: 0.6rem;
+  padding: 1.6rem 1.4rem;
+  border: 1px solid #2a2a2a;
+}
+
+.card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--safety-orange);
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}

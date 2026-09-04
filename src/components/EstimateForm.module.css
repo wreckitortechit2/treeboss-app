@@ -1,0 +1,55 @@
+.form {
+  display: grid;
+  gap: 1rem;
+  max-width: 40rem;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--safety-orange);
+  border-color: var(--safety-orange);
+}
+
+.success {
+  background: #eaf7ee;
+  border: 1px solid #b7e0c4;
+  border-radius: 0.6rem;
+  padding: 1.5rem;
+  max-width: 40rem;
+}
+
+.success h3 {
+  color: #1b7a3d;
+  margin-bottom: 0.4rem;
+}
+
+@media (max-width: 600px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}

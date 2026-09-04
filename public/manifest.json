@@ -1,0 +1,9 @@
+{
+  "name": "Tree Boss",
+  "short_name": "TreeBoss",
+  "description": "Professional tree service in Bucks County, PA",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#ff5a00"
+}

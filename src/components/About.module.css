@@ -1,0 +1,49 @@
+.section {
+  padding: 4.5rem 0;
+  background: var(--white);
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.copy p {
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.stats div {
+  background: var(--black);
+  color: var(--white);
+  border-radius: 0.6rem;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  border-left: 4px solid var(--safety-orange);
+}
+
+.stats strong {
+  display: block;
+  font-size: 1.8rem;
+  color: var(--safety-orange);
+}
+
+.stats span {
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+@media (max-width: 800px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
